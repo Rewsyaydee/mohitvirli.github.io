@@ -4,14 +4,14 @@ import { useGSAP } from "@gsap/react";
 import { usePortalStore, useThemeStore } from "@stores";
 import gsap from "gsap";
 import Image from 'next/image';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { isMobile } from "react-device-detect";
 
 const ThemeSwitcher = () => {
   const themeSwitcherRef = useRef<HTMLDivElement>(null);
   const { nextTheme, theme } = useThemeStore();
   const isActive = usePortalStore((state) => state.activePortalId);
-  const [positionClass, setPositionClass] = useState<string>('');
+  const positionClass = isMobile ? 'top-2 right-2' : 'top-6 right-6';
   const toggleTheme = () => nextTheme();
 
   useGSAP(() => {
@@ -21,10 +21,6 @@ const ThemeSwitcher = () => {
       delay: isActive ? 0 : 1,
     });
   }, [isActive]);
-
-  useEffect(() => {
-    setPositionClass(isMobile ? 'top-2 right-2' : 'top-6 right-6');
-  }, [isMobile]);
 
   useEffect(() => {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]')

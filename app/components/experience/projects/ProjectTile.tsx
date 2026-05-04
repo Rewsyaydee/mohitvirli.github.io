@@ -20,8 +20,9 @@ interface ProjectTileProps {
 const ProjectTile = ({ project, index, position, rotation, activeId, onClick }: ProjectTileProps) => {
   const projectRef = useRef<THREE.Group>(null);
   const hoverAnimRef = useRef<gsap.core.Timeline | null>(null);
-  const [hovered, setHovered] = useState(false);
+  const [desktopHovered, setDesktopHovered] = useState(false);
   const isProjectSectionActive = usePortalStore((state) => state.activePortalId === "projects");
+  const hovered = isMobile ? activeId === index : desktopHovered;
 
   const titleProps = useMemo(() => ({
     font: "./soria-font.ttf",
@@ -67,12 +68,6 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick }: 
   }, [hovered]);
 
   useEffect(() => {
-    if (isMobile) {
-      setHovered(activeId === index);
-    }
-  }, [isMobile, activeId]);
-
-  useEffect(() => {
     if (projectRef.current) {
       gsap.to(projectRef.current.position, {
         y: isProjectSectionActive ? 0 : -10,
@@ -96,8 +91,8 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick }: 
       position={position}
       rotation={rotation}
       onClick={onClick}
-      onPointerOver={() => !isMobile && isProjectSectionActive && setHovered(true)}
-      onPointerOut={() => !isMobile && isProjectSectionActive && setHovered(false)}>
+      onPointerOver={() => !isMobile && isProjectSectionActive && setDesktopHovered(true)}
+      onPointerOut={() => !isMobile && isProjectSectionActive && setDesktopHovered(false)}>
       <group ref={projectRef}>
         <mesh>
           <planeGeometry args={[4.2, 2, 1]} />

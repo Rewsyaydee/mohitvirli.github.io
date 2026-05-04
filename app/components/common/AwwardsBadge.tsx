@@ -15,10 +15,8 @@ const AwwardsBadge = () => {
   const color = useThemeStore((state) => state.theme.color);
   const { progress } = useProgress();
 
-  const [loaded, setLoaded] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
-
-  useEffect(() => { setLoaded(progress === 100) }, [progress]);
+  const loaded = progress === 100;
 
   useEffect(() => {
     if (loaded) {

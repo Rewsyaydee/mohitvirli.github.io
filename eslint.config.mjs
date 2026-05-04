@@ -7,6 +7,9 @@ const eslintConfig = [
   {
     rules: {
       "react-hooks/exhaustive-deps": "off",
+      // @react-three/fiber's useFrame requires mutating camera/object3D refs
+      // each frame; the immutability rule is incompatible with this pattern.
+      "react-hooks/immutability": "off",
     },
   },
 ];

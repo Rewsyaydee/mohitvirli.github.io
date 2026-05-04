@@ -114,6 +114,8 @@ const Timeline = ({ progress }: { progress: number }) => {
         }, 10);
       }, 1000);
     } else {
+      // Reset alongside interval cleanup; this state mirrors the timer.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisibleDashedCurvePoints([]);
       clearInterval(intervalRef.current!);
     }
