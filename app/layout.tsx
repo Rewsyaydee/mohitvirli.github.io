@@ -15,12 +15,12 @@ const vercettiFont = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com/'),
-  title: "Mohit Virli ✌️",
-  description: "A frontend developer by profession, a creative at heart.",
-  keywords: "Mohit Virli, Frontend Engineer, React Developer, Three.js, Creative Developer, Web Development, Angular, JavaScript, TypeScript, Portfolio",
-  authors: [{ name: "Mohit Virli" }],
-  creator: "Mohit Virli",
-  publisher: "Mohit Virli",
+  title: "Rusyaidi Mohd Husni ✌️",
+  description: "Computer Science student at IIUM KICT, builder of AI agents, self-hosted servers, and a frankly unreasonable number of student-life roles.",
+  keywords: "Rusyaidi Mohd Husni, Computer Science, AI, Automation, IIUM, Web Development, Portfolio",
+  authors: [{ name: "Rusyaidi Mohd Husni" }],
+  creator: "Rusyaidi Mohd Husni",
+  publisher: "Rusyaidi Mohd Husni",
   formatDetection: {
     email: false,
     address: false,
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
-    siteName: "Mohit Virli's Portfolio",
+    title: "Rusyaidi Mohd Husni",
+    description: "Computer Science student at IIUM KICT, builder of AI agents, self-hosted servers, and a frankly unreasonable number of student-life roles.",
+    siteName: "Rusyaidi Mohd Husni's Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
+    title: "Rusyaidi Mohd Husni",
+    description: "Computer Science student at IIUM KICT, builder of AI agents, self-hosted servers, and a frankly unreasonable number of student-life roles.",
   },
   verification: {
     google: "GsRYY-ivL0F_VKkfs5KAeToliqz0gCrRAJKKmFkAxBA",
